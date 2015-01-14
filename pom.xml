@@ -37,7 +37,24 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <repository>
+            <id>m2</id>
+            <name>Repository maven.antea.bogus</name>
+            <url>scpexe://maven.antea.bogus/srv/maven</url>
+        </repository>
+    </distributionManagement>
+
     <build>
+
+        <extensions>
+            <!-- Enabling the use of FTP -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>2.6</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
